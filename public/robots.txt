@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pivx-alliance-registry.vercel.app/sitemap.xml
+Sitemap: https://pivx-alliance-registry-lisa.vercel.app/sitemap.xml
