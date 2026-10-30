@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #faf9f4;
+  --ink: #1d1a16;
+  --ink-soft: #6b6357;
+  --rule: #d8d2c4;
+  --purple: #662d91;
+  --purple-soft: #f0e9f7;
+  --stamp-red: #a13a2e;
+  --good-green: #1e6b40;
+  --grey-chip: #75705f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.65;
+}
+
+::selection {
+  background: var(--purple-soft);
+}
+
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+/* status chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chip .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.chip-active .dot { background: var(--good-green); }
+.chip-active { color: var(--good-green); }
+.chip-expired .dot { background: var(--grey-chip); }
+.chip-expired { color: var(--grey-chip); }
+.chip-review .dot { background: var(--stamp-red); }
+.chip-review { color: var(--stamp-red); }
+.chip-pre .dot { background: var(--purple); }
+.chip-pre { color: var(--purple); }
+
+/* ledger table */
+.rule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.rule-table thead th {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: left;
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 2px solid var(--ink);
+}
+.rule-table tbody tr {
+  border-bottom: 1px solid var(--rule);
+  transition: background 150ms ease;
+}
+.rule-table tbody tr:hover {
+  background: var(--purple-soft);
+  box-shadow: inset 3px 0 0 var(--purple);
+}
+.rule-table tbody td {
+  padding: 1rem 1rem 1rem 0;
+  vertical-align: top;
+}
+
+/* red review stamp — reserved usage */
+.stamp {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--stamp-red);
+  border: 1.5px solid var(--stamp-red);
+  padding: 0.2rem 0.55rem;
+  text-transform: uppercase;
+}
+
+/* disavowal banner */
+.disavow {
+  border-left: 3px solid var(--stamp-red);
+  background: #fdf1ef;
+  padding: 1rem 1.25rem;
+}
+
+/* key→value fact list */
+.fact-list {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8125rem;
+}
+.fact-list dt {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 1rem;
+}
+.fact-list dd {
+  margin: 0.1rem 0 0;
+  overflow-wrap: break-word; /* long hashes wrap mid-word; normal words break at spaces */
+}
+
+/* nav */
+.site-nav a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  transition: color 150ms ease;
+}
+.site-nav a:hover {
+  color: var(--purple);
+}
+
+/* orchestrated page-load motion (single pass) */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise {
+  animation: rise 420ms ease both;
+}
+.rise-1 { animation-delay: 40ms; }
+.rise-2 { animation-delay: 80ms; }
+.rise-3 { animation-delay: 120ms; }
+.rise-4 { animation-delay: 160ms; }
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; }
+}
