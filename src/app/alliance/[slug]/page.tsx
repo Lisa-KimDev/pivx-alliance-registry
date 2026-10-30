@@ -82,9 +82,9 @@ export default async function AlliancePage({
           <p className="mt-4 max-w-[68ch] text-[1.02rem]">{a.summary}</p>
         </section>
 
-        <section className="rise rise-1 mt-8 grid gap-10 md:grid-cols-[1fr_320px]">
-          {/* Deliverables */}
-          <div>
+        <section className="rise rise-1 mt-8 grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,320px)]">
+          {/* Deliverables — minmax(0,…) lets columns shrink below min-content (long hashes) */}
+          <div className="min-w-0">
             <h2 className="text-[1.35rem] font-bold">Deliverables on record</h2>
             {a.deliverables.length > 0 ? (
               <ul className="mt-4 space-y-3">
@@ -136,7 +136,7 @@ export default async function AlliancePage({
           </div>
 
           {/* Fact box */}
-          <aside>
+          <aside className="min-w-0">
             <div className="border p-5" style={{ borderColor: "var(--ink)" }}>
               <p className="mono text-[0.65rem] tracking-[0.14em]" style={{ color: "var(--ink-soft)" }}>
                 REGISTRY RECORD

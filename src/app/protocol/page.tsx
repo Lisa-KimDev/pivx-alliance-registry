@@ -56,8 +56,9 @@ export default function ProtocolPage() {
             risks, and a no-payments-either-way clause. Every v2 proposal carries a
             completed sheet before the vote.
           </p>
-          <div className="overflow-x-auto mt-5">
-            <table className="rule-table min-w-[560px]">
+          {/* Desktop: ledger table */}
+          <div className="hidden md:block mt-5">
+            <table className="rule-table">
               <thead>
                 <tr>
                   <th className="w-[30%]">Field</th>
@@ -73,6 +74,20 @@ export default function ProtocolPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile: tap-friendly cards (no sideways scroll) */}
+          <div className="md:hidden mt-5">
+            {VETTING_SHEET.map((v, i) => (
+              <div key={v.field} className="border-b py-3.5" style={{ borderColor: "var(--rule)" }}>
+                <p className="mono font-semibold" style={{ color: "var(--purple)" }}>
+                  {String(i + 1).padStart(2, "0")} · {v.field}
+                </p>
+                <p className="text-[0.95rem] mt-0.5" style={{ color: "var(--ink-soft)" }}>
+                  {v.requirement}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
