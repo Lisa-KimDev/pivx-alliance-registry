@@ -25,13 +25,14 @@ export function SiteHeader() {
       className="sticky top-0 z-50 border-b"
       style={{ background: "var(--paper)", borderColor: "var(--rule)" }}
     >
-      <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-6 lg:px-12">
+      <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-4 sm:px-6 lg:px-12">
         <Link href="/" className="mono flex items-center gap-2.5 font-semibold tracking-[0.18em] text-[0.8rem]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/seal-512.png" alt="PIVX Alliance Registry seal" width={28} height={28} />
-          PIVX ALLIANCE REGISTRY
+          <span className="hidden sm:inline">PIVX ALLIANCE REGISTRY</span>
+          <span className="sm:hidden">REGISTRY</span>
         </Link>
-        <nav className="site-nav flex items-center gap-5">
+        <nav className="site-nav flex items-center gap-4 sm:gap-5">
           <Link href="/#registry">Registry</Link>
           <Link href="/protocol">Protocol</Link>
           <Link href="/submit">Submit</Link>
