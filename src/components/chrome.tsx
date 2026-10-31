@@ -26,7 +26,9 @@ export function SiteHeader() {
       style={{ background: "var(--paper)", borderColor: "var(--rule)" }}
     >
       <div className="mx-auto flex h-14 max-w-[1100px] items-center justify-between px-6 lg:px-12">
-        <Link href="/" className="mono font-semibold tracking-[0.18em] text-[0.8rem]">
+        <Link href="/" className="mono flex items-center gap-2.5 font-semibold tracking-[0.18em] text-[0.8rem]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/seal-512.png" alt="PIVX Alliance Registry seal" width={28} height={28} />
           PIVX ALLIANCE REGISTRY
         </Link>
         <nav className="site-nav flex items-center gap-5">
@@ -43,6 +45,8 @@ export function SiteFooter() {
   return (
     <footer className="border-t" style={{ borderColor: "var(--rule)" }}>
       <div className="mx-auto max-w-[1100px] px-6 py-10 lg:px-12">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/seal-ink.png" alt="" width={36} height={36} className="mb-4 opacity-80" />
         <p className="mono" style={{ color: "var(--ink-soft)" }}>
           PIVX ALLIANCE REGISTRY — a public service built for the PIVX DAO. Not an
           official publication of the PIVX Project. Alliances are official only when a

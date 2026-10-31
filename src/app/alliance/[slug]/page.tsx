@@ -79,6 +79,20 @@ export default async function AlliancePage({
               </span>
             )}
           </div>
+          {/* status stamp — the ceremony layer (IMG-5); width in px keeps it a stamp, not a banner */}
+          {a.status !== "active" && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={`/stamps/${a.status === "review" ? "under-review" : "term-expired"}.png`}
+              alt=""
+              width={200}
+              className="mt-3"
+              style={{
+                transform: a.status === "review" ? "rotate(-6deg)" : "rotate(-3deg)",
+                maxWidth: "200px",
+              }}
+            />
+          )}
           <p className="mt-4 max-w-[68ch] text-[1.02rem]">{a.summary}</p>
         </section>
 
