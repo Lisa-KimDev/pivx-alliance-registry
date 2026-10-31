@@ -1,6 +1,15 @@
 # IMAGERY.md — PIVX Alliance Registry image inventory & specs
 
-Audit date: 2026-10-30. Current state: **zero raster/vector images on the site** —
+> **STATUS (2026-10-31): P0 + stamp trio SHIPPED.** IMG-1 seal (header 28px + footer
+> ink-tint), IMG-2 favicon ladder (ico 16/32/48 + pngs + maskable + apple-touch),
+> IMG-3 OG card (1200×630, HTML→Playwright composition), IMG-4 UNDER REVIEW stamp
+> (wired on review pages), IMG-5 stamps RATIFIED + TERM EXPIRED (expired pages wired;
+> RATIFIED unwired until a live alliance exists). All AI renders: gpt-image-2 via
+> Codex OAuth (seal referenced against official PIVX icon), PIL distance-from-white
+> keying for transparency. Remaining: IMG-6 facsimile, IMG-7 monograms, IMG-8 OG
+> variants, IMG-9/10 optional.
+
+Audit date: 2026-10-30. Original state: **zero raster/vector images on the site** —
 all typography (by design, per DESIGN.md). This document specifies every image the
 site should have, why it earns its place, and exactly what it looks like.
 
